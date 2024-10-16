@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor</title>
+</head>
+<body>
+    <form action method="post">
+        '{%csrf_token %} Enter Mentor Id:'
+        <input type="text" name="mentor_id">
+        <br>
+        'Enter Mentor Name:'
+        <input type="text" name="mentor_name">
+        <br>
+        'Enter Mentor room number:'
+        <input type="text" name="mentor_room_no">
+        <br>
+        <input type="submit" value="SAVE">
+    </form>
+    <p><a href="{% url 'index' %}">Back to Hompage</a></p>
+    <br> 
+    '{% for i in mymentor %} {%endfor%}'
+    <table>
+        <tbody>
+            <tr>
+            <th>Mentor Id</th>
+            <th>Mentor Name</th>
+            <th>Mentor Room Number</th>
+            </tr>
+            <tr> 
+            <th>{{i.metor_id}}</th>
+            <th>{{i.mentor_name}}</th>
+            <th>{{i.mentor_room_no}}</th>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
